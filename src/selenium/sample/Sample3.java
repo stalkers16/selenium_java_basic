@@ -71,6 +71,7 @@ public class Sample3 {
 
     @Test
     public void assertFalseExample() throws Exception {
+
         String elementTextOnPage = driver.findElement(By.cssSelector(".unbelievable")).getText();
         assertFalse(!elementTextOnPage.equals("unbelievable sample text"));
         assertFalse(elementTextOnPage.equals("wrong text"));
