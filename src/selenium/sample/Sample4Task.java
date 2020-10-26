@@ -34,8 +34,23 @@ public class Sample4Task {
 
     @Test
     public void enterNumber() throws Exception {
-//         TODO:
 //        enter a number under "Number"
+        String numberKey = "4";
+        WebElement textArea = driver.findElement(By.id("number"));
+        //WebElement numberBox = driver.findElement(By.id("number"));
+        System.out.println(textArea.getText());
+        System.out.println(textArea.getAttribute("value"));
+//        System.out.println("Help");
+
+        //System.out.println(numberBox.getCssValue());
+//
+//        numberBox.clear();
+//        assertEquals(numberBox.getText(), ""); // checking that getText is empty
+//        assertEquals(numberBox.getAttribute("value"), ""); // checking that value is also empty
+//
+//        numberBox.sendKeys(numberKey);
+//        assertEquals(numberBox.getText(), "4"); // checking that getText is empty
+//        assertEquals(numberBox.getAttribute("value"), "4"); // checking that value is also empty
 //        check that button is not clickable "Clear Result"
 //        check that text is not displayed
 //        click on "Result" button
