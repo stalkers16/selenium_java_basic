@@ -22,6 +22,8 @@ public class Sample1 {
         //get title of page
         System.out.println(driver.getTitle());
 
+
+
         //get URL of current page
         System.out.println(driver.getCurrentUrl());
 

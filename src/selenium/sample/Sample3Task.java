@@ -14,6 +14,7 @@ import static org.junit.Assert.*;
 
 public class Sample3Task {
     WebDriver driver;
+    String value;
 
     // method which is being run before each test
     @Before
@@ -24,8 +25,12 @@ public class Sample3Task {
         // declaration above:
         driver = new ChromeDriver();
 
+
         //open page:
         driver.get("https://kristinek.github.io/site/examples/locators");
+        value = driver.findElement(By.id("buttonId")).getAttribute("value");
+
+
     }
 
     // method which is being run after each test
@@ -36,6 +41,12 @@ public class Sample3Task {
 
     @Test
     public void assertEqualsTask() throws Exception {
+        System.out.println(value);
+
+        int a = driver.findElements(By.className("test")).size();
+        assertEquals(5,a);
+
+        assertEquals(value, "This is also a button");
 //         TODO:
 //         check how many element with class "test" there are on page (5)
 //         check that value of second button is "This is also a button"
@@ -43,6 +54,7 @@ public class Sample3Task {
 
     @Test
     public void assertTrueTask() throws Exception {
+        assertTrue(value.equalsIgnoreCase("this is Also a Button"));
 //         TODO:
 //         check that it is True that value of second button is
 //         "this is Also a Button" if you ignore Caps Locks
@@ -51,12 +63,18 @@ public class Sample3Task {
 
     @Test
     public void assertFalseTask() throws Exception {
+        assertFalse(value.equals("This is a button"));
 //         TODO:
 //        check that it is False that value of second button is "This is a button"
     }
 
     @Test
     public void failTask() throws Exception {
+        List<WebElement> allElementsWithClass = driver.findElements(By.className("test"));
+        assertFalse(allElementsWithClass.contains("190"));
+        int a = 190;
+        assertFalse(allElementsWithClass.contains(a));
+
 //        TODO:
 //        check that none of items with class "test"
 //        contain number 190

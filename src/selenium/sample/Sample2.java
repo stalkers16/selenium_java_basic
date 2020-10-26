@@ -39,7 +39,7 @@ public class Sample2 {
         // will fail with error NoSuchElementException
         // no such element:
         // Unable to locate element: {"method":"id","selector":"headingasdga"}
-//        System.out.println(driver.findElement(By.id("headingasdga")).getText());
+        //System.out.println(driver.findElement(By.id("headingasdga")).getText());
     }
 
     @Test
