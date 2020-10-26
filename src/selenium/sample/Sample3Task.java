@@ -71,9 +71,12 @@ public class Sample3Task {
     @Test
     public void failTask() throws Exception {
         List<WebElement> allElementsWithClass = driver.findElements(By.className("test"));
-        assertFalse(allElementsWithClass.contains("190"));
         int a = 190;
-        assertFalse(allElementsWithClass.contains(a));
+        for (WebElement elementWithClass : allElementsWithClass){
+            assertFalse(allElementsWithClass.contains("190"));
+            assertFalse(allElementsWithClass.contains(a));
+
+        }
 
 //        TODO:
 //        check that none of items with class "test"
