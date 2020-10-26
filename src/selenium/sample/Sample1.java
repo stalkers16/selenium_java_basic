@@ -4,6 +4,7 @@ package selenium.sample;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Sample1 {
@@ -17,11 +18,12 @@ public class Sample1 {
 
         //open test homepage
         driver.get("https://google.com");
-        driver.get("https://kristinek.github.io/site/");
-        System.out.println(driver.findElement(By.id("h1")).getText());
+        //driver.get("https://kristinek.github.io/site/");
+        //System.out.println(driver.findElement(By.id("h1")).getText());
         //get title of page
         System.out.println(driver.getTitle());
-
+        WebElement searchBar= driver.findElement(By.xpath("//*[@id='tsf']/div[2]/div[1]/div[1]/div/div[2]/input"));
+        searchBar.sendKeys("Viss ir ok");
         //get URL of current page
         System.out.println(driver.getCurrentUrl());
 
