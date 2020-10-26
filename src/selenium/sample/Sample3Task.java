@@ -76,8 +76,10 @@ public class Sample3Task {
     public void failTask() throws Exception {
 //        check that none of items with class "test"
 //        contain number 190
-        int testElements = driver.findElements(By.className("test")).size();
-
-
+        List<WebElement> allElementsWithClass = driver.findElements(By.className("test"));
+        for (WebElement elementWithClass : allElementsWithClass) {
+            // Element doesn't seem to contain any other attributes, other than text
+            assertFalse(elementWithClass.getText().contains("190"));
+        }
     }
 }
