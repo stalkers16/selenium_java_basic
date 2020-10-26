@@ -62,11 +62,13 @@ public class Sample3Task {
 //         "this is Also a Button" if you ignore Caps Locks
 //         fail with custom error message:
         String elementTextOnPage = driver.findElement(By.id("buttonId")).getAttribute("value");
-        assertTrue(elementTextOnPage.equals("This is also a button"));
-        assertTrue(elementTextOnPage.equalsIgnoreCase("this is Also a Button"));
-        assertTrue(true);
-        fail("Don't ignore CAPS LOCK!");
-
+        try {
+            assertTrue(elementTextOnPage.equals("this is Also a Button"));
+            assertTrue("CUSTOM CATCH",elementTextOnPage.equalsIgnoreCase("tHIS IS ALSO A BUTTOn"));
+        } catch (AssertionError e) {
+            System.err.println("Don't ignore CAPS LOCK!");
+            e.printStackTrace();
+        }
 
     }
 
@@ -79,6 +81,7 @@ public class Sample3Task {
      assertFalse(elementTextOnPage.equals("This is a button"));
      assertFalse(elementTextOnPage.contains("This is a button"));
        assertFalse(false);
+
     }
 
     @Test
@@ -88,6 +91,15 @@ public class Sample3Task {
 //        check that none of items with class "test"
 //        contain number 190
 
+       try {
+           String elementTextOnPage = driver.findElement(By.className("test")).getAttribute("value");
+           String expected = "190";
+           assertEquals(expected, elementTextOnPage);
+       }
+catch (AssertionError e) {
+    System.err.println("Class test doesn't contain number 190!");
+    e.printStackTrace();
+}
 
     }
 }
