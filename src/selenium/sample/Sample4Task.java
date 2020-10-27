@@ -36,6 +36,7 @@ public class Sample4Task {
     public void enterNumber() throws Exception {
 //         TODO:
 //        enter a number under "Number"
+
 //        check that button is not clickable "Clear Result"
 //        check that text is not displayed
 //        click on "Result" button
