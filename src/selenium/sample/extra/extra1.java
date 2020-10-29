@@ -41,6 +41,7 @@ public class extra1 {
     public void navigateBack() throws Exception {
         assertEquals(base_url, driver.getCurrentUrl());
         driver.findElement(By.cssSelector("a[title='Link 1']")).click();
+        Thread.sleep(4000);
         assertEquals(new_url, driver.getCurrentUrl());
         driver.navigate().back();
         assertEquals(base_url, driver.getCurrentUrl());

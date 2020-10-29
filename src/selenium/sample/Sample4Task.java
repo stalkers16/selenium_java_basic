@@ -7,6 +7,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.StaleElementReferenceException;
+
 
 import java.sql.Time;
 
@@ -45,7 +47,7 @@ public class Sample4Task {
         numBar.sendKeys(num);
 
         Thread.sleep(4000);
-        driver.navigate().refresh();
+        //driver.navigate().refresh();
 
 //        check that button is not clickable "Clear Result"
 

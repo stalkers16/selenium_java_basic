@@ -98,7 +98,7 @@ public class Sample4 {
     public void enterTextInTextBox() throws Exception {
         WebElement textInput = driver.findElement(By.id("text"));
         String originalText = "This is a text box";
-        String sendKeyOne = " bla-bla";
+        String sendKeyOne = " qwerty";
 
         assertEquals(textInput.getText(), ""); // checking that getText is empty
         assertEquals(textInput.getAttribute("value"), originalText); // checking that value is "This is a text box"
@@ -107,7 +107,7 @@ public class Sample4 {
 
         assertEquals(textInput.getText(), ""); // checking that getText is empty
         assertEquals(textInput.getAttribute("value"), originalText + sendKeyOne);
-        // checking that value is "This is a text box" + " bla-bla"
+        // checking that value is "This is a text box" + " qwerty"
 
         textInput.clear();
         assertEquals(textInput.getText(), ""); // checking that getText is empty
@@ -117,7 +117,7 @@ public class Sample4 {
 
         assertEquals(textInput.getText(), ""); // checking that getText is empty
         assertEquals(textInput.getAttribute("value"), sendKeyOne);
-        // checking that value is "This is a text box" + " bla-bla"
+        // checking that value is "This is a text box" + " qwerty"
         assertFalse(textInput.getAttribute("value").contains(originalText));
     }
 }

@@ -59,12 +59,11 @@ public class Sample7Task {
         assertTrue(option2.isSelected());
 
 //        tick  "Option 3"
-        option2.click();
+        option3.click();
 //        click result
         driver.findElement(By.id("result_button_checkbox")).click();
         //        check that text 'You selected value(s): Option 2, Option 3' is being displayed
-        assertEquals("You selected value(s): Option 2, Option 3' is being displayed",
-                driver.findElement(By.id("result_checkbox")).getText());
+        assertEquals("You selected value(s): Option 2, Option 3",driver.findElement(By.id("result_checkbox")).getText());
 
 
     }
@@ -102,8 +101,8 @@ public class Sample7Task {
         driver.findElement(By.id("result_button_ratio")).click();
 
 //        check that 'You selected option: Option 1' text is being displayed
-        assertEquals("You selected value(s): Option 2, Option 3' is being displayed",
-                driver.findElement(By.id("result_checkbox")).getText());
+        assertEquals("You selected option: Option 1",
+                driver.findElement(By.id("result_radio")).getText());
     }
 
     @Test
@@ -121,8 +120,8 @@ public class Sample7Task {
 //        click result
         driver.findElement(By.id("result_button_select")).click();
 //        check that 'You selected option: Option 2' text is being displayed
-        assertEquals("Choose your option", dropdown.getFirstSelectedOption().getText());
-        assertEquals("You selected option: option 2' is being displayed",
+        assertEquals("Option 2", dropdown.getFirstSelectedOption().getText());
+        assertEquals("You selected option: Option 2",
                 driver.findElement(By.id("result_select")).getText());
     }
 
